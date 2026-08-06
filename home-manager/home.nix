@@ -14,6 +14,8 @@
     pkgs.wineWow64Packages.stable
     pkgs.kdePackages.filelight
     pkgs.stack
+    pkgs.asciiquarium
+    pkgs.pipes
     pkgs.chafa
   ]; 
   home.stateVersion = "26.05";
@@ -55,6 +57,7 @@
     ./fastfetch.nix
     ./feh.nix
     ./ncspot.nix
+    ./starship.nix
     ./yazi.nix
     ./cava.nix
     ./zsh.nix
