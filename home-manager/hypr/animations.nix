@@ -38,8 +38,8 @@ in
       (anim ''{ leaf = "fadeLayersIn", enabled = true, speed = 1.79, bezier = "almostLinear"}'')	    
       (anim ''{ leaf = "fadeLayersOut", enabled = true, speed = 1.39, bezier = "almostLinear"}'')
       (anim ''{ leaf = "workspaces", enabled = true, speed = 3.94, bezier = "almostLinear", style = "slide"}'')
-      (anim ''{ leaf = "workspacesIn", enabled = true, speed = 0.51, bezier = "almostLinear", style = "slide"}'')
-      (anim ''{ leaf = "workspacesOut", enabled = true, speed = 0.94, bezier = "almostLinear", style = "slide"}'')	    
+      (anim ''{ leaf = "workspacesIn", enabled = true, speed = 2.51, bezier = "almostLinear", style = "slide"}'')
+      (anim ''{ leaf = "workspacesOut", enabled = true, speed = 3.94, bezier = "almostLinear", style = "slide"}'')	    
       (anim ''{ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick"}'')
     ];
   };

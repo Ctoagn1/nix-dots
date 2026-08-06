@@ -14,6 +14,7 @@
     pkgs.wineWow64Packages.stable
     pkgs.kdePackages.filelight
     pkgs.stack
+    pkgs.chafa
   ]; 
   home.stateVersion = "26.05";
   stylix = {
@@ -49,6 +50,7 @@
     ./kitty.nix
     ./eza.nix
     ./btop.nix
+    ./discord.nix
     ./rofi.nix
     ./fastfetch.nix
     ./feh.nix
