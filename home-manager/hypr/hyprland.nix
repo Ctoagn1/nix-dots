@@ -6,6 +6,7 @@
     ./decorations.nix
     ./input.nix
     ./rules.nix
+    ./env.nix
     ./animations.nix
   ];
   wayland.windowManager.hyprland.settings.config = {

@@ -6,6 +6,7 @@
   home.packages = [
     pkgs.fortune
     pkgs.cowsay
+    pkgs.git-credential-manager
     pkgs.spotify
     pkgs.unar
     pkgs.cava
