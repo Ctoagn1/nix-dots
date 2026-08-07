@@ -9,6 +9,7 @@
     ./env.nix
     ./animations.nix
     ./idle.nix
+    ./lock.nix
   ];
   wayland.windowManager.hyprland.settings.config = {
     misc = {

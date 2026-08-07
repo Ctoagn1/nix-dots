@@ -1,12 +1,12 @@
 {config, pkgs, lib, ...}:
 {
   home.file.".local/share/fonts/Angel-Wish.ttf".source = ./fonts/Angel-Wish.ttf;
-  security.pam.services.hyprlock = true;
+  
   programs.hyprlock = {
+    enable = true;
     settings = {
       background = {
-        monitor = "";
-        path = ./../../wallpapers/current_wallpaper.jpg;
+        monitor = ""; 
         blur_passes = 2;
         contrast = 0.8916;
         brightness = 0.8172;
