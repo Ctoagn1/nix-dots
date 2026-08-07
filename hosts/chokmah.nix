@@ -11,7 +11,10 @@
   boot.loader.efi.canTouchEfiVariables = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   networking.hostName = "chokmah"; # Define your hostname.
-
+  services.sysc-greet = {
+    enable = true;
+    compositor = "hyprland";
+  };
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
 
@@ -85,10 +88,10 @@
    };
   # Enable touchpad support (enabled default in most desktopManager).
    services.libinput.enable = true;
-   services.displayManager.sddm = {
-     enable = true;
-     wayland.enable = true;
-   };
+
+   services.upower.enable = true;
+   services.power-profiles-daemon.enable = true;
+   services.blueman.enable = true;
   stylix = {
     enable = true;
     image = ../wallpapers/current_wallpaper.jpg;
@@ -135,16 +138,20 @@
      pkgs.ghc
      pkgs.vscode
      pkgs.busybox
-     pkgs.upower
      pkgs.brightnessctl
      pkgs.playerctl
    ];
    nixpkgs.config.allowUnfree = true;
    xdg.portal.enable = true;
-   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-hyprland];
+   environment.pathsToLink = [ "/share/xdg-desktop-portal" "/share/applications" ]; #so portal definitions get linked to user packages
    hardware = {
      graphics.enable = true;
      enableRedistributableFirmware = true;
+     bluetooth = {
+       enable = true;
+       powerOnBoot = false;
+     };
    };
 
   # Some programs need SUID wrappers, can be configured further or are

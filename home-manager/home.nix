@@ -18,6 +18,15 @@
     pkgs.pipes
     pkgs.chafa
     pkgs.hyprshot
+    pkgs.python3
+    pkgs.rustup
+    pkgs.gcc
+
+    #for waybar
+    pkgs.pavucontrol
+    pkgs.peaclock
+    pkgs.swaynotificationcenter
+
   ];
   home.pointerCursor = {
     enable = true;
@@ -45,6 +54,9 @@
       };
     };
   };
+
+
+
   imports = [
     ./firefox.nix
     ./hypr/hyprland.nix
