@@ -11,13 +11,20 @@
   boot.loader.efi.canTouchEfiVariables = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   networking.hostName = "chokmah"; # Define your hostname.
-  services.sysc-greet = {
-    enable = true;
-    compositor = "hyprland";
-  };
+
+
+  #services.displayManager.sddm = {
+  #  enable = true;
+  #  wayland.enable = true;
+  #  theme = "sddm-astronaut-theme";
+  #  extraPackages = [
+  #    pkgs.kdePackages.qtmultimedia #needed for theme video backend
+  #  ];
+  #};
+
+
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
-
   # Set your time zone.
    time.timeZone = "America/New_York";
 
@@ -126,6 +133,7 @@
      pkgs.wget
      pkgs.git
      pkgs.mako
+     #(pkgs.sddm-astronaut.override { embeddedTheme = "black_hole";})
      pkgs.libnotify
      pkgs.hyprpaper
      pkgs.kitty

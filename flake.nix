@@ -14,20 +14,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    sysc-greet = {
-      url = "github:Nomadcxx/sysc-greet";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = {self, nixpkgs, home-manager, stylix, sysc-greet, ... }@inputs: {
+  outputs = {self, nixpkgs, home-manager, stylix, ... }@inputs: {
     nixosConfigurations = {
       chokmah = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/chokmah.nix
-          sysc-greet.nixosModules.default
 	  stylix.nixosModules.stylix
 	  home-manager.nixosModules.home-manager
 	  {
