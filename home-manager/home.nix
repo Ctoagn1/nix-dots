@@ -17,7 +17,16 @@
     pkgs.asciiquarium
     pkgs.pipes
     pkgs.chafa
-  ]; 
+    pkgs.hyprshot
+  ];
+  home.pointerCursor = {
+    enable = true;
+    gtk.enable = true;
+    x11.enable = true;
+    package = pkgs.catppuccin-cursors.frappeDark;
+    name = "catppuccin-latte-frappe-dark";
+    size = 8;
+  };
   home.stateVersion = "26.05";
   stylix = {
     autoEnable = true;
@@ -35,16 +44,6 @@
 	name = "Prociono";
       };
     };
-  };
-  home.pointerCursor = {
-    enable = true;
-    name = "Graphite";
-    package = pkgs.graphite-cursors;
-    hyprcursor = {
-      enable = true;
-    };
-    gtk.enable = true;
-
   };
   imports = [
     ./firefox.nix
