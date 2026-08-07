@@ -75,6 +75,7 @@
   # OR
    security.rtkit.enable = true;
    security.polkit.enable = true;
+   security.pam.services.hyprlock = {};
    services.pipewire = {
      enable = true;
      pulse.enable = true;
@@ -221,7 +222,7 @@ boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_stor
       fsType = "ext4";
     };
 
-  swapDevices = [{ device = "/dev/nvme0n1p5"; }];
+  swapDevices = [{ device = "/dev/disk/by-uuid/73d0e8ff-0a54-48fd-9d27-04e861d86591"; }];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

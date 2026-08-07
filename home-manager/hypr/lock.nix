@@ -9,9 +9,9 @@
         monitor = ""; 
         blur_passes = 2;
         contrast = 0.8916;
-        brightness = 0.8172;
-        vibrancy = 0.1696;
-        vibrancy_darkness = 0.0;
+        brightness = 0.3172;
+        vibrancy = 0.8696;
+        vibrancy_darkness = 0.45;
       };
 
       general = {
@@ -30,30 +30,48 @@
       };
 
       input-field = {
-        size = "10%, 3%";
+        size = "13%, 8%";
+        rounding = 10;
         outline_thickness = 2;
         dots_size = 0.2;
+        dots_text_format = "Ø";
         dots_spacing = 0.2;
-        dots_text_format = "@";
         font_family = "Angel Wish";
         placeholder_text  = "abandon all hope ye who enter here";
         fade_on_empty = false;
-        position = "0, -150";
-        valign = "center";
+        position = "0, -400";
+
         check_text = "awaiting judgement...";
         fail_text = "thou art unworthy";
       };
 
-      label = {
-        monitor = "";
-        text = ''cmd[update:1000] echo "$TIME" '';
-        text_align = "center";
-        font_size = 200;
-        font_family = "Angel Wish";
-        halign = "center";
-        valign = "center";
+      label = [
+        {
+          monitor = "";
+          text = ''cmd[update:1000] echo "$TIME" '';
+          text_align = "center";
+          font_size = 400;
+          font_family = "Angel Wish";
+          halign = "center";
+          valign = "center";
+        }
+        {
+          monitor = "";
+          text = "Welcome, $USER.";
+          font_size = 20;
+          font_family = "Angel Wish";
+          position = "0, -200";
 
-      };
+        }
+
+        {
+          monitor = "";
+          text = ''cmd[update:1000] echo -e "$(date +"%A, %B %d")"'';
+          font_size = 50;
+          font_family = "Angel Wish";
+          position = "0, 300";
+        }
+      ];
     };
   };
 }

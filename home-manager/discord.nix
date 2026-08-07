@@ -10,11 +10,11 @@
       autoUpdate = true;
       autoUpdateNotification = true;
       notifyAboutUpdates = true;
-    };
 
-    plugins = {
-      ClearURLs.enabled = true;
-      FixYoutubeEmbeds.enabeled = true;
+      plugins = {
+        ClearURLs.enabled = true;
+        FixYoutubeEmbeds.enabeled = true;
+      };
     };
   };
 }
