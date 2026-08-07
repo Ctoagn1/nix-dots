@@ -122,7 +122,7 @@
         "menu-actions": {
   			"action-1": "nmcli radio wifi off",
   			"action-2": "nmcli radio wifi on",
-            "action-3": "hyprctl eval \"hl.exec_cmd('alacritty -e nmtui')\"",
+            "action-3": "hyprctl eval \"hl.exec_cmd('kitty -e nmtui')\"",
             "action-4": "hyprctl eval \"hl.exec_cmd('nm-connection-editor')\""
   		}
     },
@@ -137,7 +137,7 @@
         "tooltip-format": "{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}",
         "tooltip-format-enumerate-connected-battery": "{device_alias}   {device_battery_percentage}%",
-        "on-click": "~/.config/waybar/scripts/toggle_bluetooth &",
+        "on-click": "~/.local/bin/toggle_bluetooth &",
         "on-click-right": "hyprctl eval \"hl.exec_cmd('blueman-manager')\""
     },
 
@@ -157,10 +157,10 @@
     },
 
     "clock": {
-        "timezone": "America/Argentina/Buenos_Aires",
+        "timezone": "America/New_York",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%H:%M %d %B %Y}",
-        "on-click-right": "hyprctl eval \"hl.exec_cmd('alacritty --class=peaclock -e peaclock')\"",
+        "on-click-right": "hyprctl eval \"hl.exec_cmd('kitty --class=peaclock -e peaclock')\"",
         "calendar": {
             "mode": "year",
             "weeks-pos": "right",
@@ -207,9 +207,9 @@
         "menu": "on-click-right",
         "menu-file": "~/.config/waybar/context/ctlcenter.xml",
         "menu-actions": {
-            "action-1-1": "hyprctl eval \"hl.exec_cmd('alacritty -e htop')\"",
-            "action-1-2": "hyprctl eval \"hl.exec_cmd('alacritty -e nvtop')\"",
-            "action-1-3": "hyprctl eval \"hl.exec_cmd('alacritty -e pkexec powertop')\"",
+            "action-1-1": "hyprctl eval \"hl.exec_cmd('kitty -e htop')\"",
+            "action-1-2": "hyprctl eval \"hl.exec_cmd('kitty -e nvtop')\"",
+            "action-1-3": "hyprctl eval \"hl.exec_cmd('kitty -e pkexec powertop')\"",
             "action-1-4": "hyprctl eval \"hl.exec_cmd('missioncenter' )\"",
 
             "action-2-1": "hyprctl eval \"hl.exec_cmd('nwg-look')\"",
@@ -217,14 +217,14 @@
             "action-2-3": "hyprctl eval \"hl.exec_cmd('kvantummanager')\"",
 
 
-            "action-3-1": "~/.config/waybar/scripts/refreshrate 60",
-  			"action-3-2": "~/.config/waybar/scripts/refreshrate 90",
-  			"action-3-3": "~/.config/waybar/scripts/refreshrate 144",
+            "action-3-1": "~/.local/bin/refreshrate 60",
+  			"action-3-2": "~/.local/bin/refreshrate 90",
+  			"action-3-3": "~/.local/bin/refreshrate 144",
 
-            "action-4-1": "~/.config/waybar/scripts/caffeine shutdown",
-            "action-4-2": "~/.config/waybar/scripts/caffeine handle-lid-switch",
+            "action-4-1": "~/.local/bin/caffeine shutdown",
+            "action-4-2": "~/.local/bin/caffeine handle-lid-switch",
 
-            "action-5": "~/.config/waybar/scripts/powersafe",
+            "action-5": "~/.local/bin/powersafe",
             "action-6": "hyprctl reload"
   		}
     },
