@@ -7,11 +7,11 @@
     settings = {
       background = {
         monitor = ""; 
-        blur_passes = 2;
+        blur_passes = 1;
         contrast = 0.8916;
-        brightness = 0.3172;
-        vibrancy = 0.8696;
-        vibrancy_darkness = 0.45;
+        brightness = 0.4172;
+        vibrancy = 0.6696;
+        vibrancy_darkness = 0.25;
       };
 
       general = {
@@ -30,7 +30,7 @@
       };
 
       input-field = {
-        size = "13%, 8%";
+        size = "15%, 6%";
         rounding = 10;
         outline_thickness = 2;
         dots_size = 0.2;
@@ -58,10 +58,9 @@
         {
           monitor = "";
           text = "Welcome, $USER.";
-          font_size = 20;
+          font_size = 30;
           font_family = "Angel Wish";
-          position = "0, -200";
-
+          position = "0, -250";
         }
 
         {

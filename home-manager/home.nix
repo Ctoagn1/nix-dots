@@ -48,6 +48,7 @@
   imports = [
     ./firefox.nix
     ./hypr/hyprland.nix
+    ./waybar/waybar.nix
     ./kitty.nix
     ./eza.nix
     ./btop.nix
