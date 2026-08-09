@@ -2,16 +2,14 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }: 
+{ config, lib, pkgs, options, ... }: 
 {
-
   
    # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   networking.hostName = "chokmah"; # Define your hostname.
-
 
   #services.displayManager.sddm = {
   #  enable = true;
@@ -39,10 +37,6 @@
 #     keyMap = "us";
 #     useXkbConfig = true; # use xkb.options in tty.
 #   };
-
-  # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-
 
   
   fonts = {
@@ -74,15 +68,11 @@
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
   services.xserver.videoDrivers = ["nvidia"];
-  hardware.nvidia.open = true;
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
   # Enable CUPS to print documents.
-  # services.printing.enable = true;
+   services.printing.enable = true;
 
-  # Enable sound.
-  # services.pulseaudio.enable = true;
-  # OR
    security.rtkit.enable = true;
    security.polkit.enable = true;
    security.pam.services.hyprlock = {};
@@ -122,6 +112,7 @@
    };
    programs.zsh.enable = true;
    programs.steam.enable = true;
+
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
    environment.sessionVariables = {
@@ -153,12 +144,16 @@
    xdg.portal.enable = true;
    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-hyprland];
    environment.pathsToLink = [ "/share/xdg-desktop-portal" "/share/applications" ]; #so portal definitions get linked to user packages
+
    hardware = {
      graphics.enable = true;
      enableRedistributableFirmware = true;
      bluetooth = {
        enable = true;
        powerOnBoot = false;
+     };
+     nvidia = {
+       open = true;
      };
    };
 

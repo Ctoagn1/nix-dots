@@ -32,9 +32,9 @@
     enable = true;
     gtk.enable = true;
     x11.enable = true;
-    package = pkgs.catppuccin-cursors.frappeDark;
-    name = "catppuccin-latte-frappe-dark";
-    size = 8;
+    package = pkgs.phinger-cursors;
+    name = "phinger-cursors-dark";
+    size = 32;
   };
   home.stateVersion = "26.05";
   stylix = {
