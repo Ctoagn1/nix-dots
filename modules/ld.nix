@@ -1,21 +1,23 @@
 #for dynamic executables
-{config, options, pkgs, ...}:{
+{lib, options, pkgs, ...}:{
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = options.programs.nix-ld.libraries.default ++ (with pkgs; [        stdenv.cc.cc
         openssl
-        xorg.libXcomposite
-        xorg.libXtst
-        xorg.libXrandr
-        xorg.libXext
-        xorg.libX11
-        xorg.libXfixes
+        gtk3
+        libgbm
+        libXcomposite
+        libXtst
+        libXrandr
+        libXext
+        libX11
+        libXfixes
         libGL
         libva
-        pipewire.lib
-        xorg.libxcb
-        xorg.libXdamage
-        xorg.libxshmfence
-        xorg.libXxf86vm
+        pipewire
+        libxcb
+        libXdamage
+        libxshmfence
+        libXxf86vm
         libelf
         
         # Required
@@ -24,13 +26,13 @@
         bzip2
         
         # Without these it silently fails
-        xorg.libXinerama
-        xorg.libXcursor
-        xorg.libXrender
-        xorg.libXScrnSaver
-        xorg.libXi
-        xorg.libSM
-        xorg.libICE
+        libXinerama
+        libXcursor
+        libXrender
+        libXScrnSaver
+        libXi
+        libSM
+        libICE
         gnome2.GConf
         nspr
         nss
@@ -44,13 +46,13 @@
         libudev0-shim
         
         # Verified games requirements
-        xorg.libXt
-        xorg.libXmu
+        libXt
+        libXmu
         libogg
         libvorbis
         SDL
         SDL2_image
-        glew110
+        glew_1_10
         libidn
         tbb
         
@@ -62,6 +64,7 @@
         libpng12
         libsamplerate
         libmikmod
+        alsa-lib
         libtheora
         libtiff
         pixman
@@ -79,16 +82,15 @@
         libgcrypt
         libvpx
         librsvg
-        xorg.libXft
+        libXft
         libvdpau
-        gnome2.pango
+        pango
         cairo
         atk
         gdk-pixbuf
         fontconfig
         freetype
         dbus
-        alsaLib
         expat
         # Needed for electron
         libdrm

@@ -22,7 +22,14 @@
 
 
   # Configure network connections interactively with nmcli or nmtui.
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    plugins = [pkgs.networkmanager-openvpn];
+  };
+  networking.enableIPv6 = true;
+  services.gnome.gnome-keyring.enable = true;
+  networking.firewall.checkReversePath = false;
+
   # Set your time zone.
    time.timeZone = "America/New_York";
 
@@ -124,6 +131,7 @@
      pkgs.wget
      pkgs.git
      pkgs.mako
+     pkgs.wireguard-tools
      #(pkgs.sddm-astronaut.override { embeddedTheme = "black_hole";})
      pkgs.libnotify
      pkgs.hyprpaper
@@ -134,11 +142,18 @@
      pkgs.yazi
      pkgs.kdePackages.dolphin
      pkgs.kdePackages.ark
-     pkgs.ghc
      pkgs.vscode
      pkgs.busybox
+     pkgs.pkg-config
+     pkgs.alsa-lib
      pkgs.brightnessctl
      pkgs.playerctl
+     pkgs.coreutils
+
+    pkgs.python3
+    pkgs.rustup
+    pkgs.gcc
+    pkgs.ghc
    ];
    nixpkgs.config.allowUnfree = true;
    xdg.portal.enable = true;
