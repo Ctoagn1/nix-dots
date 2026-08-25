@@ -52,7 +52,7 @@
       rustfmt
       clang-tools
       marksman
-      haskell-language-server
+      haskellPackages.haskell-language-server
       nil
       pyright
     ];

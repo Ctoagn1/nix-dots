@@ -2,7 +2,10 @@
 {
     wayland.windowManager.hyprland = {
         settings = {
-            config = {
+          config = {
+                xwayland = {
+                  force_zero_scaling = true;
+                };
                 general = {
                     gaps_in = 8;
                     gaps_out = 20;

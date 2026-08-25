@@ -6,9 +6,11 @@
   home.packages = [
     pkgs.fortune
     pkgs.cowsay
+    pkgs.qemu_full
     pkgs.git-credential-manager
     pkgs.spotify
     pkgs.unar
+    pkgs.kicad
     pkgs.cava
     pkgs.cmatrix
     pkgs.wineWow64Packages.stable
@@ -18,9 +20,7 @@
     pkgs.pipes
     pkgs.chafa
     pkgs.hyprshot
-    pkgs.python3
-    pkgs.rustup
-    pkgs.gcc
+    pkgs.proton-vpn
 
     #for waybar
     pkgs.pavucontrol
@@ -34,7 +34,7 @@
     x11.enable = true;
     package = pkgs.phinger-cursors;
     name = "phinger-cursors-dark";
-    size = 32;
+    size = 16;
   };
   home.stateVersion = "26.05";
   stylix = {
@@ -63,6 +63,7 @@
     ./waybar/waybar.nix
     ./kitty.nix
     ./eza.nix
+    ./gnome_polkit.nix
     ./btop.nix
     ./discord.nix
     ./rofi.nix
