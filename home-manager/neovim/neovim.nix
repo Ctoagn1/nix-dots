@@ -55,6 +55,7 @@
       haskellPackages.haskell-language-server
       nil
       pyright
+      typescript
     ];
   };
   home.file.".config/nvim/lua/config".source = ./config;

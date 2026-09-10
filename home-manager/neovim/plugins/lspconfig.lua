@@ -39,3 +39,6 @@ vim.lsp.enable("marksman")
 -- Haskell
 vim.lsp.config("hls", {capabilities = capabilities})
 vim.lsp.enable("hls")
+-- Ts/Javascript
+vim.lsp.config("tsc", {capabilities = capabilities})
+vim.lsp.enable("tsc")

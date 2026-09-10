@@ -29,7 +29,13 @@
   networking.enableIPv6 = true;
   services.gnome.gnome-keyring.enable = true;
   networking.firewall.checkReversePath = false;
-
+  services.udev.extraRules = ''
+    # Digilent JTAG cables 
+    ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6010", MODE="666", GROUP="dialout"
+    # Xilinx Platform Cable USB II
+    ATTRS{idVendor}=="03fd", ATTRS{idProduct}=="0008", MODE="666", GROUP="dialout"
+    ATTRS{idVendor}=="03fd", ATTRS{idProduct}=="0013", MODE="666", GROUP="dialout"
+  '';
   # Set your time zone.
    time.timeZone = "America/New_York";
 
@@ -148,10 +154,12 @@
      pkgs.alsa-lib
      pkgs.brightnessctl
      pkgs.playerctl
+     pkgs.stm32cubemx
      pkgs.coreutils
 
     pkgs.python3
     pkgs.rustup
+    pkgs.nodejs
     pkgs.gcc
     pkgs.ghc
    ];
