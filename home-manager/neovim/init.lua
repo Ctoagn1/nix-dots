@@ -13,7 +13,11 @@ end
 
 local vim = vim
 local Plug = vim.fn['plug#']
+ vim.opt_local.expandtab = true
 
+vim.opt_local.softtabstop = 2
+
+vim.opt_local.shiftwidth = 2
 vim.g.start_time = vim.fn.reltime()
 vim.loader.enable() --  SPEEEEEEEEEEED 
 

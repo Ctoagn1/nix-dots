@@ -31,8 +31,8 @@ vim.lsp.enable("pyright")
 vim.lsp.config("gopls", {capabilities = capabilities})
 vim.lsp.enable("gopls")
 -- SystemVerilog
-vim.lsp.config("svls", {capabilities = capabilities})
-vim.lsp.enable("svls")
+vim.lsp.config("veridian", {capabilities = capabilities})
+vim.lsp.enable("veridian")
 -- Markdown
 vim.lsp.config("marksman", {capabilities = capabilities})
 vim.lsp.enable("marksman")

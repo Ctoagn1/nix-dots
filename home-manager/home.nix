@@ -21,6 +21,11 @@
     pkgs.chafa
     pkgs.hyprshot
     pkgs.proton-vpn
+    pkgs.zoom-us
+    pkgs.pipes
+    pkgs.godot
+    pkgs.verilator
+    pkgs.prismlauncher
 
     #for waybar
     pkgs.pavucontrol

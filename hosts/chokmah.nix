@@ -156,10 +156,13 @@
      pkgs.playerctl
      pkgs.stm32cubemx
      pkgs.coreutils
+     pkgs.gnumake
+     pkgs.iverilog 
 
     pkgs.python3
     pkgs.rustup
     pkgs.nodejs
+
     pkgs.gcc
     pkgs.ghc
    ];
