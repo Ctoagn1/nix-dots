@@ -44,6 +44,7 @@
     extraPackages = with pkgs; [
       gopls
       veridian
+      verible
       lua-language-server
       rust-analyzer
       cargo
