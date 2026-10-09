@@ -13,10 +13,15 @@
       url = "github:nix-community/stylix/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    nerv-boot = {
+      url = "git+https://codeberg.org/GuillotineMelody/nervboot";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
   };
 
-  outputs = {self, nixpkgs, home-manager, stylix, ... }@inputs: {
+  outputs = {self, nixpkgs, home-manager, stylix, nerv-boot, ... }@inputs: {
     nixosConfigurations = {
       chokmah = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -24,7 +29,8 @@
         modules = [
           ./hosts/chokmah.nix
           ./modules/ld.nix
-	  stylix.nixosModules.stylix
+          stylix.nixosModules.stylix
+          nerv-boot.nixosModules.default
 	  home-manager.nixosModules.home-manager
 	  {
 	    home-manager.useGlobalPkgs = true;

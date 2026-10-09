@@ -103,7 +103,7 @@
    services.power-profiles-daemon.enable = true;
    services.blueman.enable = true;
   stylix = {
-    enable = true;
+    enable =  true;
     image = ../wallpapers/current_wallpaper.jpg;
     polarity = "dark";
   };
@@ -235,6 +235,15 @@ boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_stor
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
+  boot.plymouth.theme = lib.mkForce "stylix";
+  boot.loader.nerv = {
+    enable = true;
+    plymouth.enable = true;
+    settings = {timeout = 8; bls-limit = 5;};
+    entries = [
+    { title = "SYSTEMD-BOOT"; subtitle = "fallback menu"; path = ''\EFI\systemd\systemd-bootx64.efi''; }
+    ];
+  };  
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/91075fbd-e09d-4daf-ba04-154a9c4ff47a";
